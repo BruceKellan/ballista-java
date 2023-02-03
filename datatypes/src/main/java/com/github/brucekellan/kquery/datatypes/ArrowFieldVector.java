@@ -3,11 +3,11 @@ package com.github.brucekellan.kquery.datatypes;
 import org.apache.arrow.vector.*;
 import org.apache.arrow.vector.types.pojo.ArrowType;
 
-public class FieldVector implements ColumnVector {
+public class ArrowFieldVector implements ColumnVector {
 
     private org.apache.arrow.vector.FieldVector arrowFieldVector;
 
-    public FieldVector(org.apache.arrow.vector.FieldVector arrowFieldVector) {
+    public ArrowFieldVector(org.apache.arrow.vector.FieldVector arrowFieldVector) {
         this.arrowFieldVector = arrowFieldVector;
     }
 
