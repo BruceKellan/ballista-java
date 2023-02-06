@@ -8,8 +8,10 @@
     <artifactId>ballista-java</artifactId>
     <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
+
     <modules>
         <module>common</module>
+        <module>datasource</module>
     </modules>
 
     <properties>
@@ -21,6 +23,10 @@
         <guava.version>30.1.1-jre</guava.version>
         <arrow.version>0.17.1</arrow.version>
         <jupiter.version>5.5.2</jupiter.version>
+        <univocity-parsers.version>2.8.4</univocity-parsers.version>
+
+        <hadoop.version>3.1.0</hadoop.version>
+        <parquet.version>1.11.0</parquet.version>
     </properties>
 
     <dependencies>

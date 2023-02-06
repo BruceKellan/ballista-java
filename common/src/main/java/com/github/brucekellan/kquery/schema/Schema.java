@@ -22,13 +22,13 @@ public class Schema {
                 .collect(Collectors.toList()));
     }
 
-    public Schema select(List<Integer> indices) {
+    public Schema project(List<Integer> indices) {
         return new Schema(indices.stream()
                 .map(index -> fields.get(index))
                 .collect(Collectors.toList()));
     }
 
-    public Schema project(List<String> names) {
+    public Schema select(List<String> names) {
         List<Field> candidateFields = Lists.newArrayList();
         for (String name : names) {
             List<Field> filterFields = fields.stream()
