@@ -37,7 +37,7 @@ public class RecordBatch {
         return fieldVectors.get(i);
     }
 
-    public String toCSV() {
+    public String toCsv() {
         int rowCount = getRowCount();
         int columnCount = getColumnCount();
         StringBuilder builder = new StringBuilder();
@@ -63,6 +63,6 @@ public class RecordBatch {
 
     @Override
     public String toString() {
-        return toCSV();
+        return toCsv();
     }
 }

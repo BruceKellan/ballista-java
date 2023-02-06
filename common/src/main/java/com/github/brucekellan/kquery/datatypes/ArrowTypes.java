@@ -15,14 +15,6 @@ public class ArrowTypes {
 
     public static final ArrowType.Int INT64_TYPE = new ArrowType.Int(64, true);
 
-//    public static final ArrowType.Int UINT8_TYPE = new ArrowType.Int(8, false);
-//
-//    public static final ArrowType.Int UINT16_TYPE = new ArrowType.Int(16, false);
-//
-//    public static final ArrowType.Int UINT32_TYPE = new ArrowType.Int(32, false);
-//
-//    public static final ArrowType.Int UINT64_TYPE = new ArrowType.Int(64, false);
-
     public static final ArrowType.FloatingPoint FLOAT_TYPE = new ArrowType.FloatingPoint(FloatingPointPrecision.SINGLE);
 
     public static final ArrowType.FloatingPoint DOUBLE_TYPE = new ArrowType.FloatingPoint(FloatingPointPrecision.DOUBLE);

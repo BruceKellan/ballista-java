@@ -14,7 +14,7 @@ import java.util.*;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
-public class CSVDataSource implements DataSource {
+public class CsvDataSource implements DataSource {
 
     private String filename;
 
@@ -26,9 +26,9 @@ public class CSVDataSource implements DataSource {
 
     private Schema finalSchema;
 
-    private static final Logger LOGGER = Logger.getLogger(CSVDataSource.class.getSimpleName());
+    private static final Logger LOGGER = Logger.getLogger(CsvDataSource.class.getSimpleName());
 
-    public CSVDataSource(String filename, Schema schema, boolean hasHeaders, int batchSize) {
+    public CsvDataSource(String filename, Schema schema, boolean hasHeaders, int batchSize) {
         this.filename = filename;
         this.schema = schema;
         this.hasHeaders = hasHeaders;
@@ -131,6 +131,6 @@ public class CSVDataSource implements DataSource {
             throw new RuntimeException(e);
         }
         parser.getDetectedFormat();
-        return new CSVDataSourceReader(readSchema, parser, batchSize);
+        return new CsvDataSourceReader(readSchema, parser, batchSize);
     }
 }

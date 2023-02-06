@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 
-public class CSVDataSourceReader implements Iterable<RecordBatch> {
+public class CsvDataSourceReader implements Iterable<RecordBatch> {
 
     private Schema schema;
 
@@ -23,7 +23,7 @@ public class CSVDataSourceReader implements Iterable<RecordBatch> {
 
     private int batchSize;
 
-    public CSVDataSourceReader(Schema schema, CsvParser parser, int batchSize) {
+    public CsvDataSourceReader(Schema schema, CsvParser parser, int batchSize) {
         this.schema = schema;
         this.parser = parser;
         this.batchSize = batchSize;
@@ -31,10 +31,10 @@ public class CSVDataSourceReader implements Iterable<RecordBatch> {
 
     @Override
     public Iterator<RecordBatch> iterator() {
-        return new CSVDataSourceReaderIterator(schema, parser, batchSize);
+        return new CsvDataSourceReaderIterator(schema, parser, batchSize);
     }
 
-    public class CSVDataSourceReaderIterator implements Iterator<RecordBatch> {
+    public class CsvDataSourceReaderIterator implements Iterator<RecordBatch> {
 
         private Schema schema;
 
@@ -46,7 +46,7 @@ public class CSVDataSourceReader implements Iterable<RecordBatch> {
 
         private Boolean started = false;
 
-        public CSVDataSourceReaderIterator(Schema schema, CsvParser parser, int batchSize) {
+        public CsvDataSourceReaderIterator(Schema schema, CsvParser parser, int batchSize) {
             this.schema = schema;
             this.parser = parser;
             this.batchSize = batchSize;
@@ -174,7 +174,7 @@ public class CSVDataSourceReader implements Iterable<RecordBatch> {
                         ((VarCharVector) vector).setSafe(j, value.getBytes());
                     }
                 } else {
-                    throw new IllegalStateException("No support for reading CSV columns with data type " + vector);
+                    throw new IllegalStateException("No support for reading csv columns with data type " + vector);
                 }
                 vector.setValueCount(records.size());
             }

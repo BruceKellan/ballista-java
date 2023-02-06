@@ -12,6 +12,7 @@
     <modules>
         <module>common</module>
         <module>datasource</module>
+        <module>logical-plan</module>
     </modules>
 
     <properties>
