@@ -9,7 +9,7 @@
     <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
     <modules>
-        <module>ballista-java-common</module>
+        <module>common</module>
     </modules>
 
     <properties>
@@ -20,6 +20,7 @@
         <lombok.version>1.18.24</lombok.version>
         <guava.version>30.1.1-jre</guava.version>
         <arrow.version>0.17.1</arrow.version>
+        <jupiter.version>5.5.2</jupiter.version>
     </properties>
 
     <dependencies>
@@ -34,6 +35,13 @@
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>${guava.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>${jupiter.version}</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
