@@ -1,4 +1,4 @@
-package com.github.brucekellan.kquery.datatypes;
+package com.github.brucekellan.kquery.schema;
 
 import java.util.stream.Collectors;
 

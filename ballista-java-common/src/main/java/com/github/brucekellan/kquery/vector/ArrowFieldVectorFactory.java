@@ -1,5 +1,6 @@
-package com.github.brucekellan.kquery.datatypes;
+package com.github.brucekellan.kquery.vector;
 
+import com.github.brucekellan.kquery.datatypes.ArrowTypes;
 import org.apache.arrow.memory.RootAllocator;
 import org.apache.arrow.vector.*;
 import org.apache.arrow.vector.types.pojo.ArrowType;

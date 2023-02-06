@@ -1,13 +1,14 @@
-package com.github.brucekellan.kquery.datatypes;
+package com.github.brucekellan.kquery.vector;
 
+import com.github.brucekellan.kquery.datatypes.ArrowTypes;
 import org.apache.arrow.vector.*;
 import org.apache.arrow.vector.types.pojo.ArrowType;
 
-public class ArrowFieldVector implements ColumnVector {
+public class FieldColumnVector implements ColumnVector {
 
     private org.apache.arrow.vector.FieldVector arrowFieldVector;
 
-    public ArrowFieldVector(org.apache.arrow.vector.FieldVector arrowFieldVector) {
+    public FieldColumnVector(org.apache.arrow.vector.FieldVector arrowFieldVector) {
         this.arrowFieldVector = arrowFieldVector;
     }
 

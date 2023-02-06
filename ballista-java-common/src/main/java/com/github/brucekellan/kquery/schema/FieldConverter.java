@@ -1,4 +1,4 @@
-package com.github.brucekellan.kquery.datatypes;
+package com.github.brucekellan.kquery.schema;
 
 public class FieldConverter {
 

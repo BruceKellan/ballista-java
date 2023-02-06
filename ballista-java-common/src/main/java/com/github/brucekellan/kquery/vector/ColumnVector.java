@@ -1,4 +1,4 @@
-package com.github.brucekellan.kquery.datatypes;
+package com.github.brucekellan.kquery.vector;
 
 import org.apache.arrow.vector.types.pojo.ArrowType;
 
