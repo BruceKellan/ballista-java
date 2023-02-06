@@ -1,6 +1,8 @@
 package com.github.brucekellan.kquery.vector;
 
+import com.github.brucekellan.kquery.datatypes.ArrowTypes;
 import org.apache.arrow.memory.RootAllocator;
+import org.apache.arrow.vector.FieldVector;
 import org.apache.arrow.vector.IntVector;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -12,11 +14,9 @@ public class ColumnVectorTest {
     @Test
     public void testFieldColumnVector() {
         int size = 10;
-        IntVector intVector = new IntVector("foo", new RootAllocator(Long.MAX_VALUE));
-        intVector.allocateNew(size);
-        intVector.setValueCount(size);
+        FieldVector arrowFieldVector = ArrowFieldVectorFactory.create(ArrowTypes.INT32_TYPE, 32 * size);
         FieldColumnVector.FieldColumnVectorBuilder builder = FieldColumnVector.builder();
-        builder.fieldVector(intVector);
+        builder.fieldVector(arrowFieldVector);
         builder.valueCount(size);
         for (int i = 0; i < size; i++) {
             builder.set(i, i);
