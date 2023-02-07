@@ -6,20 +6,21 @@ import com.github.brucekellan.kquery.schema.Schema;
 import com.google.common.collect.Lists;
 
 import java.util.List;
-import java.util.StringJoiner;
-import java.util.stream.Collectors;
 
-public class Projection implements LogicalPlan {
+public class Selection implements LogicalPlan{
 
     private LogicalPlan input;
+og
+    private LogicalExpr expr;
 
-    private List<LogicalExpr> expressions;
+    public Selection(LogicalPlan input, LogicalExpr expr) {
+        this.input = input;
+        this.expr = expr;
+    }
 
     @Override
     public Schema schema() {
-        return new Schema(expressions.stream()
-                .map(expression -> expression.toField(input))
-                .collect(Collectors.toList()));
+        return input.schema();
     }
 
     @Override
@@ -29,10 +30,6 @@ public class Projection implements LogicalPlan {
 
     @Override
     public String toString() {
-        StringJoiner joiner = new StringJoiner(", ");
-        for (LogicalExpr expression : expressions) {
-            joiner.add(expression.toString());
-        }
-        return "Projection: " + joiner;
+        return String.format("Selection: %s", expr);
     }
 }
