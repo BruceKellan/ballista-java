@@ -15,6 +15,11 @@ public class Projection implements LogicalPlan {
 
     private List<LogicalExpr> expressions;
 
+    public Projection(LogicalPlan input, List<LogicalExpr> expressions) {
+        this.input = input;
+        this.expressions = expressions;
+    }
+
     @Override
     public Schema schema() {
         return new Schema(expressions.stream()

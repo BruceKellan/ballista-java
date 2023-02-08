@@ -3,7 +3,9 @@ package com.github.brucekellan.kquery.logical.expr;
 import com.github.brucekellan.kquery.logical.LogicalExpr;
 import com.github.brucekellan.kquery.logical.LogicalPlan;
 import com.github.brucekellan.kquery.schema.Field;
+import lombok.Getter;
 
+@Getter
 public abstract class AggregateExpr implements LogicalExpr {
 
     private String name;

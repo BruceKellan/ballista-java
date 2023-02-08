@@ -7,8 +7,6 @@ import com.github.brucekellan.kquery.schema.Field;
 
 public class Count extends AggregateExpr {
 
-    private LogicalExpr expr;
-
     public Count(LogicalExpr expr) {
         super("COUNT", expr);
     }
@@ -20,6 +18,6 @@ public class Count extends AggregateExpr {
 
     @Override
     public String toString() {
-        return String.format("COUNT(%s)", expr);
+        return String.format("COUNT(%s)", getExpr());
     }
 }

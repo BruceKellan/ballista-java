@@ -10,16 +10,13 @@ import java.util.List;
 
 public class Scan implements LogicalPlan {
 
-    private String path;
-
     private DataSource dataSource;
 
     private List<String> projection;
 
     private Schema schema;
 
-    public Scan(String path, DataSource dataSource, List<String> projection) {
-        this.path = path;
+    public Scan(DataSource dataSource, List<String> projection) {
         this.dataSource = dataSource;
         this.projection = projection;
         this.schema = deriveSchema();
@@ -47,9 +44,9 @@ public class Scan implements LogicalPlan {
     @Override
     public String toString() {
         if (CollectionUtils.isEmpty(projection)) {
-            return "Scan: " + path + "; projection=None";
+            return "Scan; projection=None";
         } else {
-            return "Scan: " + path + "; projection=" + projection.toString();
+            return "Scan; projection=" + projection.toString();
         }
     }
 }

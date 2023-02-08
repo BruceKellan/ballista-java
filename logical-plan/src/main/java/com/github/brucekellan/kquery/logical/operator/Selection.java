@@ -7,10 +7,10 @@ import com.google.common.collect.Lists;
 
 import java.util.List;
 
-public class Selection implements LogicalPlan{
+public class Selection implements LogicalPlan {
 
     private LogicalPlan input;
-og
+
     private LogicalExpr expr;
 
     public Selection(LogicalPlan input, LogicalExpr expr) {

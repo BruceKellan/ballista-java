@@ -6,7 +6,6 @@ public class Min extends AggregateExpr {
 
     private LogicalExpr expr;
 
-
     public Min(LogicalExpr expr) {
         super("MIN", expr);
     }

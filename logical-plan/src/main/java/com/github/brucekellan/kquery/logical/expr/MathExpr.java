@@ -6,7 +6,7 @@ import com.github.brucekellan.kquery.schema.Field;
 import lombok.Getter;
 
 @Getter
-public abstract class MathExpr implements LogicalExpr{
+public abstract class MathExpr implements LogicalExpr {
 
     private String name;
 

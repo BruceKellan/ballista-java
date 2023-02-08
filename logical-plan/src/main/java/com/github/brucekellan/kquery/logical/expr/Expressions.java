@@ -1,6 +1,6 @@
-package com.github.brucekellan.kquery.logical;
+package com.github.brucekellan.kquery.logical.expr;
 
-import com.github.brucekellan.kquery.logical.expr.*;
+import com.github.brucekellan.kquery.logical.LogicalExpr;
 import org.apache.arrow.vector.types.pojo.ArrowType;
 
 public class Expressions {

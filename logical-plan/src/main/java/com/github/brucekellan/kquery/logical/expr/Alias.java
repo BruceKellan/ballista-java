@@ -4,7 +4,7 @@ import com.github.brucekellan.kquery.logical.LogicalExpr;
 import com.github.brucekellan.kquery.logical.LogicalPlan;
 import com.github.brucekellan.kquery.schema.Field;
 
-public class Alias implements LogicalExpr{
+public class Alias implements LogicalExpr {
 
     private LogicalExpr expr;
 

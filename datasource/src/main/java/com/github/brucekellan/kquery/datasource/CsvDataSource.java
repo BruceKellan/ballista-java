@@ -16,39 +16,40 @@ import java.util.stream.Collectors;
 
 public class CsvDataSource implements DataSource {
 
-    private String filename;
-
-    private Schema schema;
+    private String filePath;
 
     private boolean hasHeaders;
 
     private int batchSize;
 
-    private Schema finalSchema;
+    private volatile Schema finalSchema;
 
     private static final Logger LOGGER = Logger.getLogger(CsvDataSource.class.getSimpleName());
 
-    public CsvDataSource(String filename, Schema schema, boolean hasHeaders, int batchSize) {
-        this.filename = filename;
-        this.schema = schema;
+    public CsvDataSource(String filePath, Schema schema, boolean hasHeaders, int batchSize) {
+        this.filePath = filePath;
+        this.finalSchema = schema;
         this.hasHeaders = hasHeaders;
         this.batchSize = batchSize;
     }
 
     public Schema getFinalSchema() {
-        Schema finalSchema = null;
-        if (this.schema == null) {
-            finalSchema = inferSchema();
+        // 单例模式 double check
+        if (this.finalSchema == null) {
+            synchronized (this) {
+                if (this.finalSchema == null) {
+                    this.finalSchema = inferSchema();
+                }
+            }
+            return this.finalSchema;
         } else {
-            finalSchema = this.schema;
+            return this.finalSchema;
         }
-        this.finalSchema = finalSchema;
-        return this.finalSchema;
     }
 
     private Schema inferSchema() {
         LOGGER.fine("inferSchema()");
-        File file = new File(filename);
+        File file = new File(filePath);
         if (!file.exists()) {
             throw new RuntimeException(new FileNotFoundException(file.getAbsolutePath()));
         }
@@ -102,7 +103,7 @@ public class CsvDataSource implements DataSource {
     @Override
     public Iterable<RecordBatch> scan(List<String> projection) {
         LOGGER.fine("scan() projection=" + projection.toString());
-        File file = new File(filename);
+        File file = new File(filePath);
         if (!file.exists()) {
             throw new RuntimeException(new FileNotFoundException(file.getAbsolutePath()));
         }
