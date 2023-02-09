@@ -1,9 +1,11 @@
 package com.github.brucekellan.kquery.vector;
 
 import com.github.brucekellan.kquery.datatypes.ArrowTypes;
+import lombok.Getter;
 import org.apache.arrow.vector.*;
 import org.apache.arrow.vector.types.pojo.ArrowType;
 
+@Getter
 public class FieldColumnVector implements ColumnVector {
 
     private FieldVector fieldVector;

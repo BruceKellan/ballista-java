@@ -4,8 +4,18 @@ import com.github.brucekellan.kquery.datatypes.ArrowTypes;
 import org.apache.arrow.memory.RootAllocator;
 import org.apache.arrow.vector.*;
 import org.apache.arrow.vector.types.pojo.ArrowType;
+import org.apache.arrow.vector.types.pojo.Schema;
+
+import java.util.List;
 
 public class ArrowFieldVectorFactory {
+
+    public static List<FieldVector> create(Schema schema, int valueCount) {
+        VectorSchemaRoot root = VectorSchemaRoot.create(schema, new RootAllocator(Long.MAX_VALUE));
+        root.allocateNew();
+        root.setRowCount(valueCount);
+        return root.getFieldVectors();
+    }
 
     public static FieldVector create(ArrowType arrowType, int initialCapacity) {
         if (arrowType == null) {

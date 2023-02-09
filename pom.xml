@@ -13,6 +13,7 @@
         <module>common</module>
         <module>datasource</module>
         <module>logical-plan</module>
+        <module>physical-plan</module>
     </modules>
 
     <properties>

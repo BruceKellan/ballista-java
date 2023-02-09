@@ -2,10 +2,12 @@ package com.github.brucekellan.kquery;
 
 import com.github.brucekellan.kquery.schema.Schema;
 import com.github.brucekellan.kquery.vector.ColumnVector;
+import lombok.Getter;
 
 import java.util.List;
 import java.util.NoSuchElementException;
 
+@Getter
 public class RecordBatch {
 
     private Schema schema;

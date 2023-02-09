@@ -13,8 +13,8 @@ import org.junit.jupiter.api.TestInstance;
 
 import java.util.Objects;
 
-import static com.github.brucekellan.kquery.logical.expr.Expressions.col;
-import static com.github.brucekellan.kquery.logical.expr.Expressions.lit;
+import static com.github.brucekellan.kquery.logical.expr.LogicalExprs.col;
+import static com.github.brucekellan.kquery.logical.expr.LogicalExprs.lit;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class LogicalPlanTest {

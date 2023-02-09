@@ -3,7 +3,7 @@ package com.github.brucekellan.kquery.logical.expr;
 import com.github.brucekellan.kquery.logical.LogicalExpr;
 import org.apache.arrow.vector.types.pojo.ArrowType;
 
-public class Expressions {
+public class LogicalExprs {
 
     public static Column col(String name) {
         return new Column(name);
