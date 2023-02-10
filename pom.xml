@@ -16,6 +16,7 @@
         <module>physical-plan</module>
         <module>query-planner</module>
         <module>optimizer</module>
+        <module>execution</module>
     </modules>
 
     <properties>

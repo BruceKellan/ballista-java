@@ -9,24 +9,30 @@ import java.util.Set;
 
 public class OptimizerUtil {
 
-    public static void extractColumns(List<LogicalExpr> exprs, LogicalPlan input, Set<String> accums) {
+    public static void extractColumns(List<LogicalExpr> exprs, LogicalPlan input, Set<String> columnNameAccums) {
         for (LogicalExpr expr : exprs) {
-            OptimizerUtil.extractColumns(expr, input, accums);
+            OptimizerUtil.extractColumns(expr, input, columnNameAccums);
         }
     }
 
-    public static void extractColumns(LogicalExpr expr, LogicalPlan input, Set<String> accums) {
+    /**
+     * extract all column name from logic expression.
+     * @param expr
+     * @param input
+     * @param columnNameAccums
+     */
+    public static void extractColumns(LogicalExpr expr, LogicalPlan input, Set<String> columnNameAccums) {
         if (expr instanceof ColumnIndex) {
-            accums.add(input.schema().getFields().get(((ColumnIndex) expr).getI()).getName());
+            columnNameAccums.add(input.schema().getFields().get(((ColumnIndex) expr).getI()).getName());
         } else if (expr instanceof Column) {
-            accums.add(((Column) expr).getName());
+            columnNameAccums.add(((Column) expr).getName());
         } else if (expr instanceof BinaryExpr) {
-            extractColumns(((BinaryExpr) expr).getL(), input, accums);
-            extractColumns(((BinaryExpr) expr).getR(), input, accums);
+            extractColumns(((BinaryExpr) expr).getL(), input, columnNameAccums);
+            extractColumns(((BinaryExpr) expr).getR(), input, columnNameAccums);
         } else if (expr instanceof Alias) {
-            extractColumns(((Alias) expr).getExpr(), input, accums);
+            extractColumns(((Alias) expr).getExpr(), input, columnNameAccums);
         } else if (expr instanceof CastExpr) {
-            extractColumns(((CastExpr) expr).getExpr(), input, accums);
+            extractColumns(((CastExpr) expr).getExpr(), input, columnNameAccums);
         } else if (expr instanceof LiteralString) {
 
         } else if (expr instanceof LiteralLong) {
