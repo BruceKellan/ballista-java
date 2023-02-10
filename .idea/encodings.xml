@@ -7,8 +7,12 @@
     <file url="file://$PROJECT_DIR$/datasource/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/logical-plan/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/logical-plan/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/optimizer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/optimizer/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/physical-plan/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/physical-plan/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/query-planner/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/query-planner/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
   </component>

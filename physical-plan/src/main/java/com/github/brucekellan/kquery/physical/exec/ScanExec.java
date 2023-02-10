@@ -14,6 +14,11 @@ public class ScanExec implements PhysicalPlan {
 
     private List<String> projection;
 
+    public ScanExec(DataSource dataSource, List<String> projection) {
+        this.dataSource = dataSource;
+        this.projection = projection;
+    }
+
     @Override
     public Schema schema() {
         return dataSource.schema().select(projection);

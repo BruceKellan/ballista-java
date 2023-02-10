@@ -3,11 +3,13 @@ package com.github.brucekellan.kquery.logical.expr;
 import com.github.brucekellan.kquery.logical.LogicalExpr;
 import com.github.brucekellan.kquery.logical.LogicalPlan;
 import com.github.brucekellan.kquery.schema.Field;
+import lombok.Getter;
 
 import java.sql.SQLException;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
+@Getter
 public class Column implements LogicalExpr {
 
     private String name;

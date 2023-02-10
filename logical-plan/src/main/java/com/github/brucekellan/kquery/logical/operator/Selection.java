@@ -4,9 +4,11 @@ import com.github.brucekellan.kquery.logical.LogicalExpr;
 import com.github.brucekellan.kquery.logical.LogicalPlan;
 import com.github.brucekellan.kquery.schema.Schema;
 import com.google.common.collect.Lists;
+import lombok.Getter;
 
 import java.util.List;
 
+@Getter
 public class Selection implements LogicalPlan {
 
     private LogicalPlan input;

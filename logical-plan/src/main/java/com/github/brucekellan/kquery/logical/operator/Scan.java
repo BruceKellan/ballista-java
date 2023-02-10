@@ -4,10 +4,12 @@ import com.github.brucekellan.kquery.datasource.DataSource;
 import com.github.brucekellan.kquery.logical.LogicalPlan;
 import com.github.brucekellan.kquery.schema.Schema;
 import com.google.common.collect.Lists;
+import lombok.Getter;
 import org.apache.commons.collections.CollectionUtils;
 
 import java.util.List;
 
+@Getter
 public class Scan implements LogicalPlan {
 
     private DataSource dataSource;

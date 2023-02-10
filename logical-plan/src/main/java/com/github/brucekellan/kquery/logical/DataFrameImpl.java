@@ -1,5 +1,6 @@
 package com.github.brucekellan.kquery.logical;
 
+import com.github.brucekellan.kquery.logical.expr.AggregateExpr;
 import com.github.brucekellan.kquery.logical.operator.Aggregate;
 import com.github.brucekellan.kquery.logical.operator.Projection;
 import com.github.brucekellan.kquery.logical.operator.Selection;
@@ -26,7 +27,7 @@ public class DataFrameImpl implements DataFrame {
     }
 
     @Override
-    public DataFrame aggregate(List<LogicalExpr> groupByExprs, List<LogicalExpr> aggregateExprs) {
+    public DataFrame aggregate(List<LogicalExpr> groupByExprs, List<AggregateExpr> aggregateExprs) {
         return new DataFrameImpl(new Aggregate(plan, groupByExprs, aggregateExprs));
     }
 

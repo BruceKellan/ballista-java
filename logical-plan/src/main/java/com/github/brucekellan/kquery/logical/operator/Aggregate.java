@@ -2,22 +2,25 @@ package com.github.brucekellan.kquery.logical.operator;
 
 import com.github.brucekellan.kquery.logical.LogicalExpr;
 import com.github.brucekellan.kquery.logical.LogicalPlan;
+import com.github.brucekellan.kquery.logical.expr.AggregateExpr;
 import com.github.brucekellan.kquery.schema.Schema;
 import com.github.brucekellan.kquery.util.ListUtil;
 import com.google.common.collect.Lists;
+import lombok.Getter;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Getter
 public class Aggregate implements LogicalPlan {
 
     private LogicalPlan input;
 
     private List<LogicalExpr> groupExprs;
 
-    private List<LogicalExpr> aggregateExprs;
+    private List<AggregateExpr> aggregateExprs;
 
-    public Aggregate(LogicalPlan input, List<LogicalExpr> groupExprs, List<LogicalExpr> aggregateExprs) {
+    public Aggregate(LogicalPlan input, List<LogicalExpr> groupExprs, List<AggregateExpr> aggregateExprs) {
         this.input = input;
         this.groupExprs = groupExprs;
         this.aggregateExprs = aggregateExprs;

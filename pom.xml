@@ -14,6 +14,8 @@
         <module>datasource</module>
         <module>logical-plan</module>
         <module>physical-plan</module>
+        <module>query-planner</module>
+        <module>optimizer</module>
     </modules>
 
     <properties>

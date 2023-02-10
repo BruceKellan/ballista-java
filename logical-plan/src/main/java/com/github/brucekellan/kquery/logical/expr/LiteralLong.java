@@ -4,7 +4,9 @@ import com.github.brucekellan.kquery.datatypes.ArrowTypes;
 import com.github.brucekellan.kquery.logical.LogicalExpr;
 import com.github.brucekellan.kquery.logical.LogicalPlan;
 import com.github.brucekellan.kquery.schema.Field;
+import lombok.Getter;
 
+@Getter
 public class LiteralLong implements LogicalExpr {
 
     private Long n;
