@@ -17,6 +17,7 @@
         <module>query-planner</module>
         <module>optimizer</module>
         <module>execution</module>
+        <module>sql</module>
     </modules>
 
     <properties>
